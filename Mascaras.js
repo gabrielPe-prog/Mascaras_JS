@@ -1,4 +1,6 @@
 /* Máscaras de CPF e CNPJ */
+
+/* Basta adicionar o atributo oninput="applyCpfCnpjMask(this)" no campo do input */
 function CpfCnpjMask(input) {
       const value = input.value.replace(/\D/g, '');
       if (value.length <= 11) {
