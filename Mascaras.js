@@ -1,6 +1,6 @@
 /* Máscaras de CPF e CNPJ */
 
-/* Basta adicionar o atributo oninput="applyCpfCnpjMask(this)" no campo do input */
+/* Basta adicionar o atributo oninput="CpfCnpjMask(this)" no campo do input */
 function CpfCnpjMask(input) {
       const value = input.value.replace(/\D/g, '');
       if (value.length <= 11) {
@@ -8,4 +8,20 @@ function CpfCnpjMask(input) {
       } else {
         input.value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
       }
+}
+
+/* Máscaras de CEP */
+
+/* Basta adicionar o atributo oninput="CepMask(this)" no campo do input */
+function CepMask(input) {
+      const value = input.value.replace(/\D/g, '');
+      input.value = value.replace(/(\d{5})(\d{3})/, '$1-$2');
+}
+
+/* Máscaras de RG */
+
+/* Basta adicionar o atributo oninput="RgMask(this)" no campo do input */
+function RgMask(input) {
+      const value = input.value.replace(/\D/g, '');
+      input.value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4');
 }
