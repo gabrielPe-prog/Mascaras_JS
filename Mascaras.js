@@ -25,3 +25,10 @@ function RgMask(input) {
       const value = input.value.replace(/\D/g, '');
       input.value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4');
 }
+
+/* Máscara para campos de Valor em Reais R$ */
+function formatCurrency(inputElement) {
+  const value = inputElement.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+  const formattedValue = (Number(value) / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  inputElement.value = formattedValue;
+}
