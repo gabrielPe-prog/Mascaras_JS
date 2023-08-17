@@ -27,7 +27,7 @@ function RgMask(input) {
 }
 
 /* Máscara para campos de Valor em Reais R$ */
-function formatCurrency(inputElement) {
+function ReaisMask(inputElement) {
   const value = inputElement.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
   const formattedValue = (Number(value) / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   inputElement.value = formattedValue;
