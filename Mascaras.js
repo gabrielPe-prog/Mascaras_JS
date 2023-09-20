@@ -33,13 +33,13 @@ function ReaisMask(inputElement) {
   inputElement.value = formattedValue;
 }
 
-function soNumeros(event){
-    const valorInput = event.target.value;
-    const rmvLetras = valorInput.replace(/[^0-9]/g, '');
-    event.target.value = rmvLetras;
+function soNumeros(input) {
+  const valorInput = input.value;
+  const rmvLetras = valorInput.replace(/[^0-9]/g, '');
+  input.value = rmvLetras;
 }
 
-function HoraMask(input){
+function HoraMask(input) {
     const value = input.value.replace(/\D/g, '');
-    input.target.value = value.replace(/(\d{2})(\d{2})/, '$1:$2');
-}
+    input.value = value.replace(/(\d{2})(\d{2})/, '$1:$2');
+  }
