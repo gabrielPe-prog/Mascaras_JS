@@ -32,3 +32,14 @@ function ReaisMask(inputElement) {
   const formattedValue = (Number(value) / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   inputElement.value = formattedValue;
 }
+
+function soNumeros(event){
+    const valorInput = event.target.value;
+    const rmvLetras = valorInput.replace(/[^0-9]/g, '');
+    event.target.value = rmvLetras;
+}
+
+function HoraMask(input){
+    const value = input.value.replace(/\D/g, '');
+    input.target.value = value.replace(/(\d{2})(\d{2})/, '$1:$2');
+}
